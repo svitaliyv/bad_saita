@@ -9,6 +9,7 @@ var api = require('./api/questions');
 app.use('/api/questions', api(app));
 
 var port = 3000;
-app.listen(port, function() {
+
+app.listen(port, () => {
     console.log(`Bad Saita api starting on port ${port}!`);
 });

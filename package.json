@@ -20,7 +20,8 @@
         "test-watch": "karma start --no-single-run --auto-watch",
         "ci": "npm run e2e && npm run test",
         "docs": "typedoc --options typedoc.json src/app/app.component.ts",
-        "start": "npm run server",
+        "start": "npm run server & npm run api",
+        "api": "node server/app",
         "postinstall": "npm run webdriver-update"
     },
     "dependencies": {
