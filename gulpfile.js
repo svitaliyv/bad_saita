@@ -1,12 +1,8 @@
 var gulp = require('gulp');
-var nodemon = require('gulp-nodemon');
+var server = require('gulp-express');
 
-gulp.task('start', function() {
-    nodemon({
-        script: '.',
-        ext: 'js',
-        env: { 'NODE_ENV': 'development' }
-    })
+gulp.task("server", () => {
+    return server.run(['server/app.js']);
 });
 
 gulp.task('default', ['start']);

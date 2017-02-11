@@ -1,0 +1,23 @@
+[{
+    "id": 1,
+    "key": "framework",
+    "text": "What framework uses in this bad site?",
+    "type": "radio",
+    "points": 5,
+    "variants": [
+        { "name": "Webpack", "id": 1 },
+        { "name": "React", "id": 2 },
+        { "name": "Angular2", "id": 3 },
+        { "name": "i don't know that", "id": 4 }
+    ],
+    "answer": {
+        "id": 3,
+        "points": 5,
+        "alternatives": [
+            { "id": 4, "points": 1 }
+        ],
+        "descriptions": ""
+    },
+    "successAction": "",
+    "errorAction": ""
+}]
