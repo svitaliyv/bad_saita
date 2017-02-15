@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-
-import { ApiService } from './shared';
-
 import '../style/app.scss';
 import '../style/bootstrap/css/bootstrap.css';
 
@@ -11,11 +8,8 @@ import '../style/bootstrap/css/bootstrap.css';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  questions: Array<Object>;
 
-  constructor(private api: ApiService) {
-    this.questions = this.api.questions;
-
+  constructor() {
 
   }
 }

@@ -1,11 +1,18 @@
 import { Injectable } from '@angular/core';
 
+import { Http } from '@angular/http';
+
 @Injectable()
 export class ApiService {
-  title = 'React';
-  
-  questions = [{
-    text: 'awdawd wad awd awd awd ad'
-  }]
+  constructor(private http: Http){
+  }
+
+  getQuestions(){
+    
+    return this.http.get('api/questons').subscribe((res:Object) => console.log(res));
+  }
 
 }
+
+
+

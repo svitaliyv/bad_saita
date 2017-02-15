@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { QuizeComponent } from './quize/quize.component';
 import { ProgressComponent } from './quize-progress/quize-progress.component';
-import { ApiService } from './shared';
+import { ApiService, DataStorage } from './shared';
 import { routing } from './app.routing';
 
 @NgModule({
@@ -24,7 +24,8 @@ import { routing } from './app.routing';
     ProgressComponent
   ],
   providers: [
-    ApiService
+    ApiService,
+    DataStorage
   ],
   bootstrap: [AppComponent]
 })
