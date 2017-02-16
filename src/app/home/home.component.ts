@@ -10,10 +10,7 @@ import { ApiService, DataStorage } from '../shared';
 export class HomeComponent implements OnInit {
 
   constructor(private api: ApiService, private dataStorage: DataStorage) {
-      debugger;
-
       console.log(this.api.getQuestions());
-      
       console.log(this.dataStorage.points);
   }
 

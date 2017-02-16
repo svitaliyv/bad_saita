@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.static(__dirname + '/../dist'));
 
 var api = require('./api/questions');
+
 app.use('/api/questions', api(app));
 
 app.use('/', (req, res, next) => {
