@@ -1,3 +1,3 @@
 export * from './api.service';
 
-export * from './dataStorage';
+export * from './data.service';

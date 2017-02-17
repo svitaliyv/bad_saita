@@ -2,16 +2,18 @@ import { Component, OnInit } from '@angular/core';
 
 import { ApiService, DataStorage } from '../shared';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'my-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private api: ApiService, private dataStorage: DataStorage) {
-      console.log(this.api.getQuestions());
-      console.log(this.dataStorage.points);
+  constructor(
+    private api: ApiService,
+    private dataStorage: DataStorage,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -19,7 +21,10 @@ export class HomeComponent implements OnInit {
   }
 
   startQuize() {
-    debugger;
-  }
+    var questions = this.api.getQuestions();
+    this.dataStorage.fetch(questions);
 
+    this.router.navigate(['/quize']);
+    
+  }
 }

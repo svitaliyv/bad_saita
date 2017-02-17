@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DataStorage2 } from '../shared/dataStorage';
+import { DataStorage } from '../shared/data.service';
 
 @Component({
   selector: 'my-progress',
@@ -9,18 +9,12 @@ import { DataStorage2 } from '../shared/dataStorage';
 })
 
 export class ProgressComponent implements OnInit {
-  storage: DataStorage2
-
   qustions: Array<Object>
 
-  constructor() {
-    // Do stuff
+  gameStarted: Boolean
 
-    debugger;
-
-    this.storage = new DataStorage2();
-
-    this.qustions = this.storage.questions;
+  constructor(private storage: DataStorage) {
+    this.gameStarted = this.storage.gameStarted;
   }
 
   ngOnInit() {

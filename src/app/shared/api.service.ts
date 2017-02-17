@@ -1,15 +1,10 @@
 import { Injectable } from '@angular/core';
-
 import { Http } from '@angular/http';
-
-import { DataStorage2 } from './dataStorage';
+import { DataStorage } from './data.service';
 
 @Injectable()
 export class ApiService {
-  storage: DataStorage2
-
-  constructor(private http: Http){
-    this.storage = new DataStorage2();
+  constructor(private http: Http, private storage: DataStorage){
   }
 
   getQuestions(){

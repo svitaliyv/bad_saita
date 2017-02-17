@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataStorage } from '../shared/data.service';
 
 @Component({
   selector: 'my-quize',
@@ -6,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quize.component.scss']
 })
 export class QuizeComponent implements OnInit {
-
-  constructor() {
-    // Do stuff
+  constructor(private storage: DataStorage) {
   }
 
   ngOnInit() {
-    console.log('Hello About');
+    this.storage.startGame();
   }
-
 }

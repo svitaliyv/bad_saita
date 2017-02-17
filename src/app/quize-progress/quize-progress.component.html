@@ -1,6 +1,9 @@
 <div>
+    <div [ngIf]='!gameStarted'>
+        Lets start quize.
+    </div>
 
-    {{ questions.length }}
-
-
+    <div [ngIf]='gameStarted'>
+        Points: {{ questionsLength }}
+    </div>
 </div>
