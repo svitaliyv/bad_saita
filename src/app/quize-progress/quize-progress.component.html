@@ -1,9 +1,9 @@
 <div>
-    <div [ngIf]='!gameStarted'>
+    <div *ngIf='!vm.gameStarted'>
         Lets start quize.
     </div>
 
-    <div [ngIf]='gameStarted'>
+    <div *ngIf='vm.gameStarted'>
         Points: {{ questionsLength }}
     </div>
 </div>

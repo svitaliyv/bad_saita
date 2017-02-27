@@ -10,12 +10,17 @@ import { ProgressComponent } from './quize-progress/quize-progress.component';
 import { ApiService, DataStorage } from './shared';
 import { routing } from './app.routing';
 
+import { ModalModule } from 'angular2-modal';
+import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
+
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
-    routing
+    routing,
+    ModalModule.forRoot(),
+    BootstrapModalModule
   ],
   declarations: [
     AppComponent,

@@ -11,10 +11,14 @@ import { DataStorage } from '../shared/data.service';
 export class ProgressComponent implements OnInit {
   qustions: Array<Object>
 
+  vm: any
+
   gameStarted: Boolean
 
   constructor(private storage: DataStorage) {
-    this.gameStarted = this.storage.gameStarted;
+    this.vm = this.storage;
+
+    setInterval(() => console.log(this.storage.gameStarted), 10000)
   }
 
   ngOnInit() {
