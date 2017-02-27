@@ -19,23 +19,27 @@ export class QuizeComponent implements OnInit {
 
   surrender() {
     var self = this;
-    var template = require("../shared/templates/surrender.html");
-    self.modal.alert()
+    require.ensure(["../shared/templates/surrender.html"], () => {
+      var template = require("../shared/templates/surrender.html");
+      self.modal.alert()
         .size('lg')
         .showClose(true)
         .title('surrender')
         .body(template)
         .open();
+    });
   }
 
   openHelp() {
-    var template = require("../shared/templates/help.html");
-    this.modal.alert()
+    var self = this;
+    require.ensure(["../shared/templates/help.html"], () => {
+      var template = require("../shared/templates/help.html");
+      self.modal.alert()
         .size('lg')
         .showClose(true)
-        .title('openHelp')
+        .title('surrender')
         .body(template)
         .open();
-
+    });
   }
 }
