@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { QuizeComponent } from './quize/quize.component';
 import { ProgressComponent } from './quize-progress/quize-progress.component';
+import { CustomModal } from './modals/custom.component';
 import { ApiService, DataStorage } from './shared';
 import { routing } from './app.routing';
 
@@ -26,13 +27,15 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     AppComponent,
     HomeComponent,
     QuizeComponent,
-    ProgressComponent
+    ProgressComponent,
+    CustomModal
   ],
   providers: [
     ApiService,
     DataStorage
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ CustomModal ]
 })
 export class AppModule {
   constructor(public appRef: ApplicationRef) {

@@ -1,12 +1,15 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { DataStorage } from '../shared/data.service';
-import { Overlay } from 'angular2-modal';
-import { Modal } from 'angular2-modal/plugins/bootstrap';
+import { Overlay, overlayConfigFactory } from 'angular2-modal';
+import { Modal, BSModalContext} from 'angular2-modal/plugins/bootstrap';
+
+import { CustomModal } from '../modals/custom.component';
 
 @Component({
   selector: 'my-quize',
   templateUrl: './quize.component.html',
-  styleUrls: ['./quize.component.scss']
+  styleUrls: ['./quize.component.scss'],
+  providers: [Modal]
 })
 export class QuizeComponent implements OnInit {
   constructor(private storage: DataStorage, overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal) {
@@ -41,5 +44,9 @@ export class QuizeComponent implements OnInit {
         .body(template)
         .open();
     });
+  }
+
+  openCustom() {
+     return this.modal.open(CustomModal, overlayConfigFactory({ num1: 2, num2: 3 }, BSModalContext));
   }
 }

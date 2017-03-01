@@ -83,6 +83,15 @@ module.exports = function makeWebpackConfig() {
      */
     config.module = {
         rules: [
+
+            // {
+            //     test: /\.babel.js$/,
+            //     loader: 'babel-loader',
+            //     exclude: [/node_modules\/(?!(ng2-.+))/],
+            //     query: {
+            //         presets: ['es2015'],
+            //     }
+            // },
             // Support for .ts files.
             {
                 test: /\.ts$/,
