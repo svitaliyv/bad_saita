@@ -7,7 +7,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { QuizeComponent } from './quize/quize.component';
 import { ProgressComponent } from './quize-progress/quize-progress.component';
-import { CustomModal } from './modals/custom.component';
+
+import { ModalsComponent } from './modals/modals.component';
+import { CustomModal } from './modals/custom/custom.component';
+import { ResultsComponent } from './results/results.component';
+
 import { ApiService, DataStorage } from './shared';
 import { routing } from './app.routing';
 
@@ -28,7 +32,9 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     HomeComponent,
     QuizeComponent,
     ProgressComponent,
-    CustomModal
+    CustomModal,
+    ModalsComponent,
+    ResultsComponent
   ],
   providers: [
     ApiService,

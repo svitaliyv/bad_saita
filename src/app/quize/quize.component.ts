@@ -1,52 +1,17 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataStorage } from '../shared/data.service';
-import { Overlay, overlayConfigFactory } from 'angular2-modal';
-import { Modal, BSModalContext} from 'angular2-modal/plugins/bootstrap';
-
-import { CustomModal } from '../modals/custom.component';
 
 @Component({
   selector: 'my-quize',
   templateUrl: './quize.component.html',
-  styleUrls: ['./quize.component.scss'],
-  providers: [Modal]
+  styleUrls: ['./quize.component.scss']
 })
 export class QuizeComponent implements OnInit {
-  constructor(private storage: DataStorage, overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal) {
-    overlay.defaultViewContainer = vcRef;
+  constructor(private storage: DataStorage) {
+
   }
 
   ngOnInit() {
     this.storage.startGame();
-  }
-
-  surrender() {
-    var self = this;
-    require.ensure(["../shared/templates/surrender.html"], () => {
-      var template = require("../shared/templates/surrender.html");
-      self.modal.alert()
-        .size('lg')
-        .showClose(true)
-        .title('surrender')
-        .body(template)
-        .open();
-    });
-  }
-
-  openHelp() {
-    var self = this;
-    require.ensure(["../shared/templates/help.html"], () => {
-      var template = require("../shared/templates/help.html");
-      self.modal.alert()
-        .size('lg')
-        .showClose(true)
-        .title('surrender')
-        .body(template)
-        .open();
-    });
-  }
-
-  openCustom() {
-     return this.modal.open(CustomModal, overlayConfigFactory({ num1: 2, num2: 3 }, BSModalContext));
   }
 }
