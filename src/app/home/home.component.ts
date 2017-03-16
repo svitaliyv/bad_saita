@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-import { ApiService, DataStorage } from '../shared';
-
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,8 +8,6 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   constructor(
-    private api: ApiService,
-    private dataStorage: DataStorage,
     private router: Router) {
   }
 
@@ -21,10 +16,6 @@ export class HomeComponent implements OnInit {
   }
 
   startQuize() {
-    var questions = this.api.getQuestions();
-    this.dataStorage.fetch(questions);
-
     this.router.navigate(['/quize']);
-    
   }
 }

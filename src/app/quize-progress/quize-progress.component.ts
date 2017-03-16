@@ -17,8 +17,6 @@ export class ProgressComponent implements OnInit {
 
   constructor(private storage: DataStorage) {
     this.vm = this.storage;
-
-    setInterval(() => console.log(this.storage.gameStarted), 10000)
   }
 
   ngOnInit() {

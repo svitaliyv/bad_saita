@@ -4,6 +4,10 @@
     </div>
 
     <div *ngIf='vm.gameStarted'>
-        Points: {{ questionsLength }}
+        <div> Questions: </div>
+
+        <div *ngFor='let question of vm.questions' class='questionMark'>
+        </div>
+
     </div>
 </div>

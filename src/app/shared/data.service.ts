@@ -24,10 +24,6 @@ export class DataStorage {
     console.log("answer", data);
   }
 
-  fetch(questions: any) {
-    this.questions = questions;
-  }
-
   startGame() {
     this.gameStarted = true;
   }
