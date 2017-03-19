@@ -7,7 +7,6 @@ import { DataStorage } from '../shared/data.service';
   templateUrl: './quize-progress.component.html',
   styleUrls: ['./quize-progress.component.scss']
 })
-
 export class ProgressComponent implements OnInit {
   qustions: Array<Object>
 

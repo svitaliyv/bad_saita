@@ -1,4 +1,16 @@
-<div>
+<div class="row">
+    <div class="col-sm-3">
+        <quize-info>
+        </quize-info>
+    </div>
 
+    <div class="col-sm-6">
+        <question *ngIf="vm.activeQuestion" [data]="vm.activeQuestion">
+        </question>
+    </div>
 
+    <div class="col-sm-3">
+        <quize-info>
+        </quize-info>
+    </div>
 </div>

@@ -1,0 +1,17 @@
+<div>
+    <div class="question-text">
+        {{ data.text }}
+    </div>
+
+    <div class="row questions">
+        
+        
+        <div *ngFor="let variant of data.variants" class="col-sm-6">
+            
+            <div class="variant">
+                {{ variant.name }}
+            </div>
+        </div>
+
+    </div>
+</div>

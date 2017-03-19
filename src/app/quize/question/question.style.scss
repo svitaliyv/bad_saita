@@ -1,0 +1,21 @@
+:host {
+    .question-text {
+        padding-top: 30px;
+    }
+    .questions {
+        padding-top: 30px;
+    }
+    .variant {
+        border: 1px solid black;
+        border-radius: 2px;
+        padding: 20px 20px;
+        background-color: aquamarine;
+        margin: 5px;
+        cursor: pointer;
+        box-shadow: 4px 10px 10px -1px rgba(0, 0, 0, 0.46);
+        &:hover {
+            background-color: silver;
+            box-shadow: inset 4px 10px 10px -1px rgba(0, 0, 0, 0.46);
+        }
+    }
+}

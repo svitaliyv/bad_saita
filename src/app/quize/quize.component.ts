@@ -8,11 +8,14 @@ import { ApiService } from '../shared';
   styleUrls: ['./quize.component.scss']
 })
 export class QuizeComponent implements OnInit {
+  vm: any
+
   constructor(private storage: DataStorage, private api: ApiService,) {
   }
 
   ngOnInit() {
     this.storage.startGame();
     this.api.getQuestions();
+    this.vm = this.storage;
   }
 }

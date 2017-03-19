@@ -5,6 +5,10 @@ export class DataStorage {
 
   questions: Array<Object>
 
+  activeQuestion: Object
+
+  index = 0
+
   points: Number
 
   gameStarted: Boolean
@@ -18,6 +22,7 @@ export class DataStorage {
 
    save(data: any) {
     this.questions = data.questions;
+    this.activeQuestion = data.questions[this.index];
   }
 
   answer(data: any) {
