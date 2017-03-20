@@ -1,14 +1,18 @@
 <div>
-    <div class="question-text">
+    <div class="question-text text text-lg">
+
+        <div class="question-icon">
+            <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+        </div>
+
         {{ data.text }}
     </div>
 
-    <div class="row questions">
-        
-        
+    <div class="row variants">
+
         <div *ngFor="let variant of data.variants" class="col-sm-6">
-            
-            <div class="variant">
+
+            <div class="variant text">
                 {{ variant.name }}
             </div>
         </div>

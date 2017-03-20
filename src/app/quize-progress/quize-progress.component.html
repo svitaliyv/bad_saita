@@ -1,12 +1,12 @@
 <div>
-    <div *ngIf='!vm.gameStarted'>
+    <div *ngIf='!gameStarted'>
         Lets start quize.
     </div>
 
-    <div *ngIf='vm.gameStarted'>
-        <div> Questions: </div>
+    <div *ngIf='gameStarted'>
+        <div> Results: </div>
 
-        <div *ngFor='let question of vm.questions' class='questionMark'>
+        <div *ngFor='let result of results' class='questionMark' [ngClass]='{active: result.status === "active"}'>
         </div>
 
     </div>

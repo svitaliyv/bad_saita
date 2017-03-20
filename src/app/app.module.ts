@@ -9,6 +9,7 @@ import { QuizeComponent } from './quize/quize.component';
 import { ProgressComponent } from './quize-progress/quize-progress.component';
 
 import { QuizeInfoComponent } from './quize/quize-info/quize-info.component';
+import { LastResultComponent } from './quize/last-result/last-result.component';
 import { QuestionComponent } from './quize/question/question.component';
 
 import { ModalsComponent } from './modals/modals.component';
@@ -39,7 +40,8 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     ModalsComponent,
     ResultsComponent,
     QuizeInfoComponent,
-    QuestionComponent
+    QuestionComponent,
+    LastResultComponent
   ],
   providers: [
     ApiService,

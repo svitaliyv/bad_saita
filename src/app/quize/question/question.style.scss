@@ -2,20 +2,24 @@
     .question-text {
         padding-top: 30px;
     }
-    .questions {
+    .question-icon {
+        display: inline-block;
+        padding-right: 20px;
+    }
+    .variants {
         padding-top: 30px;
     }
     .variant {
-        border: 1px solid black;
+        border: 1px solid gray;
         border-radius: 2px;
         padding: 20px 20px;
-        background-color: aquamarine;
-        margin: 5px;
+        background-color: #e4e4e4;
+        margin: 10px;
         cursor: pointer;
         box-shadow: 4px 10px 10px -1px rgba(0, 0, 0, 0.46);
         &:hover {
             background-color: silver;
-            box-shadow: inset 4px 10px 10px -1px rgba(0, 0, 0, 0.46);
+            box-shadow: inset 3px 3px 10px -1px rgba(0, 0, 0, 0.46);
         }
     }
 }
