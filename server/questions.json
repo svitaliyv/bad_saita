@@ -5,10 +5,10 @@
     "type": "radio",
     "points": 5,
     "variants": [
-        { "name": "Webpack", "id": 1 },
-        { "name": "React", "id": 2 },
-        { "name": "Angular2", "id": 3 },
-        { "name": "i don't know that", "id": 4 }
+        { "text": "Webpack", "id": 1 },
+        { "text": "React", "id": 2 },
+        { "text": "Angular2", "id": 3 },
+        { "text": "i don't know that", "id": 4 }
     ],
     "answer": {
         "id": 3,
@@ -24,13 +24,13 @@
     "id": 2,
     "key": "framework",
     "text": "What framework uses in this bad site?",
-    "type": "radio",
+    "type": "check",
     "points": 5,
     "variants": [
-        { "name": "Webpack", "id": 1 },
-        { "name": "React", "id": 2 },
-        { "name": "Angular2", "id": 3 },
-        { "name": "i don't know that", "id": 4 }
+        { "text": "Webpack", "id": 1 },
+        { "text": "React", "id": 2 },
+        { "text": "Angular2", "id": 3 },
+        { "text": "i don't know that", "id": 4 }
     ],
     "answer": {
         "id": 3,

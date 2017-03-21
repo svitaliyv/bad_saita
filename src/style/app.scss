@@ -1,4 +1,5 @@
 .text {
+    display: inline-block;
     font-family: 'Cookie', cursive;
     font-size: 22px;
     &-bold {
@@ -6,5 +7,57 @@
     }
     &-lg {
         font-size: 26px;
+    }
+}
+
+.padding {
+    &-lg {
+        padding: 30px 30px;
+    }
+    &-md {
+        padding: 20px 20px;
+    }
+    &-xs {
+        padding: 5px 5px;
+    }
+}
+
+.padding-x {
+    &-lg {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+
+.padding-y {
+    &-lg {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    &-xs {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
+.bs-btn {
+    border: 1px solid gray;
+    border-radius: 2px;
+    background-color: #e4e4e4;
+    cursor: pointer;
+    box-shadow: 4px 10px 10px -1px rgba(0, 0, 0, 0.46);
+    transition: all 0.5s;
+    &.selected,
+    &:hover {
+        background-color: silver;
+        box-shadow: inset 3px 3px 10px -1px rgba(0, 0, 0, 0.46);
+    }
+    &.type_ok {
+        background-color: #7dc9ff;
+        &.selected,
+        &:hover {
+            background-color: #6da7ff;
+            box-shadow: inset 3px 3px 10px -1px rgba(0, 0, 0, 0.46);
+        }
     }
 }

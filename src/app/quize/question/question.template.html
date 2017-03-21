@@ -10,12 +10,30 @@
 
     <div class="row variants">
 
-        <div *ngFor="let variant of data.variants" class="col-sm-6">
+        <div *ngFor="let variant of variants" class="col-sm-6">
 
-            <div class="variant text">
-                {{ variant.name }}
+            <div class="variant bs-btn padding-md" (click)="variant.select()" [ngClass]="{ selected: variant.selected }">
+
+                <div class="variant-icon" *ngIf="type === 'check'">
+                    <i class="fa fa-square-o" aria-hidden="true" *ngIf="!variant.selected"></i>
+                    <i class="fa fa-check-square-o" aria-hidden="true" *ngIf="variant.selected"></i>
+                </div>
+
+                <div class="variant-icon" *ngIf="type === 'radio'">
+                    <i class="fa fa-circle-o" aria-hidden="true" *ngIf="!variant.selected"></i>
+                    <i class="fa fa-dot-circle-o" aria-hidden="true" *ngIf="variant.selected"></i>
+                </div>
+
+                <div class="text">{{ variant.text }}</div>
             </div>
         </div>
 
+    </div>
+
+    <div class="question-submitWrapper">
+        <button type="button" class="question-submit padding-x-lg padding-y-xs bs-btn type_ok" (click)="submit"> 
+            <i class="fa fa-terminal" aria-hidden="true"></i>
+            <div class="text"> Commit </div>
+        </button>
     </div>
 </div>

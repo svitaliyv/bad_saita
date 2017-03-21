@@ -17,15 +17,26 @@ class Result {
 export class ProgressComponent implements OnInit {
   results: Result[]
 
+  currentIndex: any
+
   gameStarted: Boolean
 
   constructor(private storage: DataStorage) {
+
+    Object.defineProperty(this.storage, 'index', {
+      set: (index) => {
+        this.results[this.currentIndex].status = 'unknown';
+        this.currentIndex = index;
+        this.results[index].status = 'active';
+      }
+    });
 
     Object.defineProperty(this.storage, 'questions', {
       set: (questions) => { 
         this.results = questions.map(() => { 
           return new Result("unknown");
         });
+        this.currentIndex = 0;
         this.results[0].status = 'active';
       }
     });

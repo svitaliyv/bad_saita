@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class DataStorage {
 
-  questions: Array<Object>
+  questions: Object[]
 
   activeQuestion: Object
 
-  index = 0
+  index: Number
 
   points: Number
 
@@ -18,11 +18,12 @@ export class DataStorage {
   constructor() {
       this.questions = [];
       this.points = 0;
+      this.index = 0;
    }
 
    save(data: any) {
     this.questions = data.questions;
-    this.activeQuestion = data.questions[this.index];
+    this.activeQuestion = data.questions[0];
   }
 
   answer(data: any) {
