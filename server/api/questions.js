@@ -10,17 +10,19 @@ module.exports = app => {
     router.get('/check', function(req, res) {
         let query = req.query;
         let questionId = query.questionId;
-        let userAnswerId = query.answerId;
+        let userAnswerIds = query.answerIds;
         let question = questionsDict[questionId];
 
-        if (!questionId || !userAnswerId || !question) {
+        if (!questionId || !userAnswerIds || !question) {
             return res.json({ success: false });
         }
 
-        let isRight = userAnswerId == question.answer.id;
+        userAnswerIds = userAnswerIds.split(',').map(x => parseInt(x, 10));
+
+        let isRight = _.isEmpty(_.difference(userAnswerIds, question.answer.ids));
         let points = isRight ? question.answer.points : 0;
 
-        return res.json({ success: true, result: { points: points, isRight: isRight } });
+        return res.json({ success: true, result: { points, isRight } });
     });
 
     router.get('/', (req, res) => {

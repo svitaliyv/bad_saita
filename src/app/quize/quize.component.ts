@@ -10,7 +10,7 @@ import { ApiService } from '../shared';
 export class QuizeComponent implements OnInit {
   vm: any
 
-  constructor(private storage: DataStorage, private api: ApiService,) {
+  constructor(private storage: DataStorage, private api: ApiService) {
   }
 
   ngOnInit() {

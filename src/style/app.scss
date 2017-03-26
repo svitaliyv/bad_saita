@@ -54,10 +54,8 @@
     }
     &.type_ok {
         background-color: #7dc9ff;
-        &.selected,
         &:hover {
             background-color: #6da7ff;
-            box-shadow: inset 3px 3px 10px -1px rgba(0, 0, 0, 0.46);
         }
     }
 }

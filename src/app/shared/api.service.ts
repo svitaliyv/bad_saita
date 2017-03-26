@@ -8,15 +8,15 @@ export class ApiService {
   }
 
   getQuestions(){
-    return this.http.get('api/questions')
-      .map((res:any) => res.json())
-      .subscribe((res:any) => this.storage.save(res));
+      return this.http.get('api/questions')
+          .map((res:any) => res.json())
+          .subscribe((res:any) => this.storage.save(res));
   }
 
-  check(questionId: Number, answerId: Number){
-    return this.http.get(`api/check?questionId=${questionId}&answerId=${answerId}`)
-      .map((res:any) => res.json())
-      .subscribe((res:any) => this.storage.answer(res));
+  check(questionId: Number, answerIds: string){
+      return this.http.get(`api/questions/check?questionId=${questionId}&answerIds=${answerIds}`)
+          .map((res:any) => res.json())
+          .subscribe((res:any) => this.storage.nextQuestion(res));
   }
 }
 

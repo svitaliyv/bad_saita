@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ApiService } from '../../shared';
+import { filter } from 'lodash';
 
 class Variant{
   selected: boolean = false;
-  constructor(public text: string, private parent: QuestionComponent) {
+  constructor(public text: string, public id: string, private parent: QuestionComponent) {
   }
 
   select() {
@@ -21,11 +23,9 @@ export class QuestionComponent implements OnInit {
 
   type: string
 
-  selectedVariants: Variant[]
-
   variants: Variant[]
 
-  constructor() {
+  constructor(private api: ApiService) {
   }
 
   ngOnInit() {
@@ -34,7 +34,7 @@ export class QuestionComponent implements OnInit {
   }
 
   getVariants(variants: any) {
-    return variants.map(v => new Variant(v.text, this));
+    return variants.map(v => new Variant(v.text, v.id, this));
   }
 
   onSelect() {
@@ -43,5 +43,13 @@ export class QuestionComponent implements OnInit {
           variant.selected = false;
        }
     }
+  }
+
+  commit() {
+    let answersIds = filter(this.variants, item => item.selected)
+        .map(item => item.id)
+        .join(',');
+        
+    this.api.check(this.data.id, answersIds);
   }
 }
