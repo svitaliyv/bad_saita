@@ -17,51 +17,29 @@ class Result {
 export class ProgressComponent implements OnInit {
   results: Result[]
 
-  questions: Object[]
-
   currentIndex: any
 
   gameStarted: Boolean
 
   constructor(private storage: DataStorage) {
-    this.currentIndex = this.storage.index;
+    this.storage.questions.subscribe(questions => {
+        this.results = questions.map(() => new Result('unknown'));
+    });
 
-    Object.defineProperty(this.storage, 'index', {
-      set: (value) => {
-        this.results[this.currentIndex].status = 'unknown';
+    this.storage.index.subscribe(value => {
+        let prevResult = this.results[this.currentIndex];
         this.currentIndex = value;
-        this.results[value].status = 'active';
-      },
-      get: () => {
-        return this.currentIndex;
-      }
+        let currentResult = this.results[this.currentIndex];
+        if (currentResult) {
+          currentResult.status = 'active';
+        }
+        if (prevResult) {
+          prevResult.status = 'unknown';
+        }
     });
 
-    this.questions = this.storage.questions;
-
-    Object.defineProperty(this.storage, 'questions', {
-      set: (value) => {
-        this.results = value.map(() => { 
-          return new Result("unknown");
-        });
-        this.questions = value;
-        this.currentIndex = 0;
-        this.results[0].status = 'active';
-      },
-      get: () => {
-        return this.questions;
-      }
-    });
-
-    this.gameStarted = this.storage.gameStarted;
-
-    Object.defineProperty(this.storage, 'gameStarted', {
-      set: (gameStarted) => { 
-        this.gameStarted = gameStarted;
-      },
-      get: () => {
-        return this.gameStarted;
-      }
+    this.storage.gameStarted.subscribe(value => {
+        this.gameStarted = value;
     });
   }
 

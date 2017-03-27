@@ -4,7 +4,12 @@ import { filter } from 'lodash';
 
 class Variant{
   selected: boolean = false;
-  constructor(public text: string, public id: string, private parent: QuestionComponent) {
+  text: string;
+  id: string;
+
+  constructor(public data: any, private parent: QuestionComponent) {
+      this.id = data.id;
+      this.text = data.text;
   }
 
   select() {
@@ -19,9 +24,13 @@ class Variant{
   styleUrls: ['./question.style.scss']
 })
 export class QuestionComponent implements OnInit {
-  @Input() data: any;
+  @Input() activeQuestion: any;
 
   type: string
+
+  text: string
+
+  id: number
 
   variants: Variant[]
 
@@ -29,12 +38,18 @@ export class QuestionComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.variants = this.getVariants(this.data.variants);
-      this.type = this.data.type;
+      this.activeQuestion.subscribe(activeQuestion => {
+          if (activeQuestion.id) {
+              this.variants = this.getVariants(activeQuestion.variants);
+              this.type = activeQuestion.type;
+              this.text = activeQuestion.text;
+              this.id = activeQuestion.id;
+          }
+      })
   }
 
   getVariants(variants: any) {
-    return variants.map(v => new Variant(v.text, v.id, this));
+    return variants.map(v => new Variant(v, this));
   }
 
   onSelect() {
@@ -50,6 +65,6 @@ export class QuestionComponent implements OnInit {
         .map(item => item.id)
         .join(',');
         
-    this.api.check(this.data.id, answersIds);
+    this.api.check(this.id, answersIds);
   }
 }

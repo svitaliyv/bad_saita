@@ -13,6 +13,8 @@ module.exports = app => {
         let userAnswerIds = query.answerIds;
         let question = questionsDict[questionId];
 
+        console.log(question, userAnswerIds, questionId);
+
         if (!questionId || !userAnswerIds || !question) {
             return res.json({ success: false });
         }
