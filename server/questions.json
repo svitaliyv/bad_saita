@@ -13,30 +13,43 @@
     "answer": {
         "ids": [3],
         "points": 5,
-        "descriptions": ""
+        "description": "You must look at the root"
     },
-    "successAction": "",
-    "errorAction": ""
+    "action": ""
 }, {
     "id": 2,
-    "key": "framework",
-    "text": "What framework uses in this bad site2?",
+    "key": "post_requests",
+    "text": "How many post request were sent to the server?",
+    "type": "radio",
+    "points": 5,
+    "variants": [
+        { "text": "one", "id": 1 },
+        { "text": "two", "id": 2 },
+        { "text": "five", "id": 3 },
+        { "text": "no requests", "id": 4 }
+    ],
+    "answer": {
+        "ids": [1],
+        "points": 3,
+        "description": "Try to find answer in network tab in dev tool"
+    },
+    "action": ""
+}, {
+    "id": 3,
+    "key": "find_element",
+    "text": "Find all elements on page with class 'bad_class'. What tags has this class?",
     "type": "check",
     "points": 5,
     "variants": [
-        { "text": "Webpack1", "id": 1 },
-        { "text": "React3", "id": 2 },
-        { "text": "Angular2", "id": 3 },
-        { "text": "i don't know that1", "id": 4 }
+        { "text": "div", "id": 1 },
+        { "text": "section", "id": 2 },
+        { "text": "input", "id": 3 },
+        { "text": "button", "id": 4 }
     ],
     "answer": {
-        "id": 3,
-        "points": 5,
-        "alternatives": [
-            { "id": 4, "points": 1 }
-        ],
-        "descriptions": ""
+        "ids": [1, 4],
+        "points": 3,
+        "description": "I use ctrl+f in element tab in dev tool in that case"
     },
-    "successAction": "",
-    "errorAction": ""
+    "action": ""
 }]

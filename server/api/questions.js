@@ -13,8 +13,6 @@ module.exports = app => {
         let userAnswerIds = query.answerIds;
         let question = questionsDict[questionId];
 
-        console.log(question, userAnswerIds, questionId);
-
         if (!questionId || !userAnswerIds || !question) {
             return res.json({ success: false });
         }
@@ -23,8 +21,11 @@ module.exports = app => {
 
         let isRight = _.isEmpty(_.difference(userAnswerIds, question.answer.ids));
         let points = isRight ? question.answer.points : 0;
+        let answer = question.answer;
 
-        return res.json({ success: true, result: { points, isRight } });
+        answer.rightVariants = _.filter(question.variants, variant => question.answer.ids.indexOf(variant.id) >= 0);
+
+        return res.json({ success: true, result: { points, isRight, answer } });
     });
 
     router.get('/', (req, res) => {

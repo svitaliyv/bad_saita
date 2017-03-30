@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { BehaviorSubject} from 'rxjs/BehaviorSubject';
+import { Subject} from 'rxjs/Subject';
 
 @Injectable()
 export class DataStorage {
@@ -8,6 +9,8 @@ export class DataStorage {
   questions: BehaviorSubject<Object[]>
 
   activeQuestion: BehaviorSubject<Object>
+
+  lastResult: Subject<any>
 
   index: BehaviorSubject<number> = new BehaviorSubject(0)
 
@@ -21,6 +24,7 @@ export class DataStorage {
       this.questions = new BehaviorSubject([]);
       this.gameStarted = new BehaviorSubject(false);
       this.activeQuestion = new BehaviorSubject({});
+      this.lastResult = new Subject();
       this.points = 0;
   }
 
@@ -39,6 +43,7 @@ export class DataStorage {
 
     this.index.next(this.index.value + 1);
     this.activeQuestion.next(this.questions.value[this.index.value]);
+    this.lastResult.next(result);
   }
 
   startGame() {
