@@ -18,6 +18,10 @@ export class ApiService {
           .map((res:any) => res.json())
           .subscribe((res:any) => this.storage.nextQuestion(res));
   }
+
+  fakePost(){
+      return this.http.post("api/fake", {}).subscribe(console.log);
+  }
 }
 
 

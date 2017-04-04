@@ -1,9 +1,26 @@
 [{
+    "id": 5,
+    "key": "console",
+    "text": "What said Bad Saita in dev tools console?",
+    "type": "radio",
+    "variants": [
+        { "text": "Hello, World!", "id": 1 },
+        { "text": "The road will be mastered by the going", "id": 2 },
+        { "text": "Attitude is a little thing that makes a big difference.", "id": 3 },
+        { "text": "i don't know that", "id": 4 }
+    ],
+    "answer": {
+        "ids": [4],
+        "points": 5,
+        "description": "press F12 and open console tab to find the answer"
+    },
+    "action": "say",
+    "actionParams": ["i don't know that"]
+}, {
     "id": 1,
     "key": "framework",
     "text": "What framework uses in this bad site?",
     "type": "radio",
-    "points": 5,
     "variants": [
         { "text": "Webpack", "id": 1 },
         { "text": "React", "id": 2 },
@@ -21,7 +38,6 @@
     "key": "post_requests",
     "text": "How many post request were sent to the server?",
     "type": "radio",
-    "points": 5,
     "variants": [
         { "text": "one", "id": 1 },
         { "text": "two", "id": 2 },
@@ -29,17 +45,67 @@
         { "text": "no requests", "id": 4 }
     ],
     "answer": {
-        "ids": [1],
-        "points": 3,
+        "ids": [2],
         "description": "Try to find answer in network tab in dev tool"
     },
-    "action": ""
+    "action": "post",
+    "actionParams": [2]
 }, {
     "id": 3,
     "key": "find_element",
     "text": "Find all elements on page with class 'bad_class'. What tags has this class?",
     "type": "check",
-    "points": 5,
+    "variants": [
+        { "text": "div", "id": 1 },
+        { "text": "section", "id": 2 },
+        { "text": "input", "id": 3 },
+        { "text": "button", "id": 4 }
+    ],
+    "answer": {
+        "ids": [1, 4],
+        "points": 3,
+        "description": "I use ctrl+f in element tab in dev tool in that case"
+    },
+    "action": ""
+}, {
+    "id": 5,
+    "key": "find_events",
+    "text": "Find all elements on page with class 'bad_class'. What tags has this class?",
+    "type": "check",
+    "variants": [
+        { "text": "div", "id": 1 },
+        { "text": "section", "id": 2 },
+        { "text": "input", "id": 3 },
+        { "text": "button", "id": 4 }
+    ],
+    "answer": {
+        "ids": [1, 4],
+        "points": 3,
+        "description": "I use ctrl+f in element tab in dev tool in that case"
+    },
+    "action": ""
+}, {
+    "id": 7,
+    "key": "find_css",
+    "text": "Find all elements on page with class 'bad_class'. What tags has this class?",
+    "type": "check",
+    "variants": [
+        { "text": "div", "id": 1 },
+        { "text": "section", "id": 2 },
+        { "text": "input", "id": 3 },
+        { "text": "button", "id": 4 }
+    ],
+    "answer": {
+        "ids": [1, 4],
+        "points": 3,
+        "description": "I use ctrl+f in element tab in dev tool in that case"
+    },
+    "action": ""
+}, {
+    "id": 9,
+    "key": "change_css",
+    "text": "Find all elements on page with class 'bad_class'. What tags has this class?",
+    "type": "check",
     "variants": [
         { "text": "div", "id": 1 },
         { "text": "section", "id": 2 },

@@ -1,12 +1,13 @@
 <div>
-    <div *ngIf='!gameStarted'>
+    <div *ngIf='!gameStarted' class="text text-lg">
         Lets start quize.
     </div>
 
     <div *ngIf='gameStarted'>
-        <div> Results: </div>
+        <div class="text text-lg result-text"> Results: </div>
 
-        <div *ngFor='let result of results' class='questionMark' [ngClass]='{active: result.status === "active"}'>
+        <div *ngFor='let result of results' class='questionMark' [ngClass]='result.status'>
+            <i class="fa fa-crosshairs fa-2x" aria-hidden="true"></i>
         </div>
 
     </div>

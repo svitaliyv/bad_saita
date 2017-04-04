@@ -8,7 +8,7 @@ export class DataStorage {
 
   questions: BehaviorSubject<Object[]>
 
-  activeQuestion: BehaviorSubject<Object>
+  activeQuestion: BehaviorSubject<any>
 
   lastResult: Subject<any>
 
@@ -40,6 +40,7 @@ export class DataStorage {
 
     let result = response.result;
     this.points = this.points + result.points;
+    result.index = this.index.value;
 
     this.index.next(this.index.value + 1);
     this.activeQuestion.next(this.questions.value[this.index.value]);

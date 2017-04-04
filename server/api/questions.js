@@ -32,5 +32,9 @@ module.exports = app => {
         return res.json({ success: true, questions: _.map(questions, q => _.omit(q, 'answer')) });
     });
 
+    router.post('/fake', (req, res) => {
+        return res.json({ success: true });
+    });
+
     return router;
 };

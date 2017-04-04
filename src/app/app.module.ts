@@ -15,6 +15,7 @@ import { QuestionComponent } from './quize/question/question.component';
 import { ModalsComponent } from './modals/modals.component';
 import { CustomModal } from './modals/custom/custom.component';
 import { ResultsComponent } from './results/results.component';
+import { ElfComponent } from './elf/elf.component';
 
 import { ApiService, DataStorage } from './shared';
 import { routing } from './app.routing';
@@ -41,7 +42,8 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
     ResultsComponent,
     QuizeInfoComponent,
     QuestionComponent,
-    LastResultComponent
+    LastResultComponent,
+    ElfComponent
   ],
   providers: [
     ApiService,
