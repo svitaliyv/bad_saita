@@ -20,7 +20,7 @@ module.exports = app => {
         userAnswerIds = userAnswerIds.split(',').map(x => parseInt(x, 10));
 
         let isRight = _.isEmpty(_.difference(userAnswerIds, question.answer.ids));
-        let points = isRight ? question.answer.points : 0;
+        let points = isRight ? question.points : 0;
         let answer = question.answer;
 
         answer.rightVariants = _.filter(question.variants, variant => question.answer.ids.indexOf(variant.id) >= 0);

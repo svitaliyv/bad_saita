@@ -16,7 +16,6 @@ export class QuizeInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    
     this.storage.lastResult.subscribe(result => {
         this.points += result.points;
     });
@@ -28,5 +27,12 @@ export class QuizeInfoComponent implements OnInit {
         let secs = this.seconds % 60;
         this.time = `${(mins ? mins + ' min ' : '')}${secs} sec`;
     });
+
+    this.storage.gameFinished.subscribe(result => {
+        if(result) {
+          this.storage.resultTime = { stringFormat: this.time, seconds: this.seconds };
+        }
+    });
+
   }
 }
