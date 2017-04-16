@@ -66,62 +66,99 @@
     "answer": {
         "ids": [1, 4],
         "description": "I use ctrl+f in element tab in dev tool in that case"
-    },
-    "action": ""
+    }
 }, {
     "id": 5,
     "key": "find_events",
-    "text": "Find all elements on page with class 'bad_class'. What tags has this class?",
+    "text": "Find event not default events on bad saita logotype?",
     "type": "check",
     "variants": [
-        { "text": "div", "id": 1 },
-        { "text": "section", "id": 2 },
-        { "text": "input", "id": 3 },
-        { "text": "button", "id": 4 }
+        { "text": "dance", "id": 1 },
+        { "text": "jump", "id": 2 },
+        { "text": "hover", "id": 3 },
+        { "text": "click", "id": 4 }
     ],
-    "points": 5,
+    "points": 7,
     "answer": {
-        "ids": [1, 4],
+        "ids": [1, 3],
         "description": "I use ctrl+f in element tab in dev tool in that case"
     },
-    "action": ""
+    "action": "bind",
+    "actionParams": ["dance", "hover"]
 }, {
     "id": 7,
-    "key": "find_css",
-    "text": "Find all elements on page with class 'bad_class'. What tags has this class?",
-    "type": "check",
+    "key": "use_console",
+    "text": "What is the expression - var exp = 5 * 8 + 77 + '35' + (86 + 53) + 'text' + 5 + 1 + ('4' * 1) + 13 + !!true + false + null; - ?",
+    "type": "radio",
     "variants": [
-        { "text": "div", "id": 1 },
-        { "text": "section", "id": 2 },
-        { "text": "input", "id": 3 },
-        { "text": "button", "id": 4 }
+        { "text": "242358653text51413truefalsetrue", "id": 1 },
+        { "text": "11735139text51413truefalsenull", "id": 2 },
+        { "text": "797358653text51413falsefalsenull", "id": 3 },
+        { "text": "281text514truefalsenull", "id": 4 }
     ],
     "points": 5,
     "answer": {
-        "ids": [1, 4],
-        "description": "I use ctrl+f in element tab in dev tool in that case"
+        "ids": [2],
+        "description": "Sometime it's easier to use calculator or ..."
     },
     "action": ""
 }, {
     "id": 9,
     "key": "change_css",
-    "text": "Find all elements on page with class 'bad_class'. What tags has this class?",
+    "text": "why commit button change color for red?",
     "type": "check",
     "variants": [
-        { "text": "div", "id": 1 },
-        { "text": "section", "id": 2 },
-        { "text": "input", "id": 3 },
-        { "text": "button", "id": 4 }
+        { "text": "class critical-btn", "id": 1 },
+        { "text": "class very-hard-question", "id": 2 },
+        { "text": "class red-btn", "id": 3 },
+        { "text": "class shy-btn", "id": 4 }
     ],
     "points": 5,
     "answer": {
-        "ids": [1, 4],
+        "ids": [2, 3, 4],
         "description": "I use ctrl+f in element tab in dev tool in that case"
     },
-    "action": ""
+    "action": "addClasses",
+    "actionParams": ["red-btn", "very-hard-question", "critical-btn", "shy-btn"]
+}, {
+    "id": 10,
+    "key": "emulate_hover",
+    "text": "What site in opinion of bad saita are the best? (try to hover mause on bad saita)",
+    "type": "radio",
+    "variants": [
+        { "text": "google.com", "id": 1 },
+        { "text": "ssibir.com", "id": 2 },
+        { "text": "2gis.ru", "id": 3 },
+        { "text": "bad_saita.com", "id": 4 }
+    ],
+    "points": 5,
+    "answer": {
+        "ids": [3],
+        "description": "see a context menu on element tab in dev tools"
+    },
+    "action": "addSantaSpeach",
+    "actionParams": "http://2gis.ru"
 }, {
     "id": 11,
-    "key": "find_component",
+    "key": "headers",
+    "text": "read headers x-my-token1 and x-my-token2 of last post request?",
+    "type": "radio",
+    "variants": [
+        { "text": "1: x-my-token1 and 2: x-my-token1", "id": 1 },
+        { "text": "1: x-my-token2 and 2: x-my-token1", "id": 2 },
+        { "text": "1: x-my-token1 and 2: x-my-token2", "id": 3 },
+        { "text": "1: x-my-token2 and 2: x-my-token2", "id": 4 }
+    ],
+    "points": 5,
+    "answer": {
+        "ids": [4],
+        "description": ""
+    },
+    "action": "postWithHeaders",
+    "actionParams": [{"x-my-token": "x-my-token2"}, {"x-my-token2": "x-my-token2"}]
+}, {
+    "id": 15,
+    "key": "stop_it",
     "text": "Find component ?",
     "type": "radio",
     "variants": [
@@ -136,4 +173,6 @@
         "description": ""
     },
     "action": ""
+
+
 }]

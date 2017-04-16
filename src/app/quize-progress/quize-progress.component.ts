@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { DataStorage } from '../shared/data.service';
 
@@ -14,7 +14,7 @@ class Result {
   templateUrl: './quize-progress.component.html',
   styleUrls: ['./quize-progress.component.scss']
 })
-export class ProgressComponent implements OnInit {
+export class ProgressComponent {
   results: Result[]
 
   currentIndex: any
@@ -46,9 +46,4 @@ export class ProgressComponent implements OnInit {
         this.gameStarted = value;
     });
   }
-
-  ngOnInit() {
-    console.log('ProgressComponent');
-  }
-
 }

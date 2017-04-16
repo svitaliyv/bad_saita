@@ -58,6 +58,61 @@
             background-color: #6da7ff;
         }
     }
+    &.red-btn,
+    &.shy-btn {
+        background-color: Red;
+        &:hover {
+            background-color: Red;
+        }
+    }
+    &.very-hard-question {
+        background-color: Red;
+        &:hover {
+            background-color: Red;
+        }
+    }
+}
+
+.bad-saita-best-site {
+    position: absolute;
+    padding: 15px;
+    border: 2px solid #5a8f00;
+    color: #333;
+    background: #fff;
+    top: 120px;
+    left: 20%;
+    border-radius: 10px;
+    display: none;
+    &:before {
+        content: "";
+        position: absolute;
+        top: -18px;
+        right: 47px;
+        border-width: 0 18px 18px;
+        border-style: solid;
+        border-color: #5a8f00 transparent;
+        display: block;
+        width: 0;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: -13px;
+        right: 53px;
+        border-width: 0 13px 13px;
+        border-style: solid;
+        border-color: #fff transparent;
+        display: block;
+        width: 0;
+    }
+}
+
+.logo {
+    &:hover {
+        .bad-saita-best-site {
+            display: block;
+        }
+    }
 }
 
 .float-left {

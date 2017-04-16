@@ -12,10 +12,19 @@ header {
     width: 100%;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
     z-index: 1;
+    text-align: center;
+    .header__content {
+        max-width: 1030px;
+    }
 }
 
 .logo {
     margin-left: 50px;
+    &:hover {
+        .bad-saita-best-site {
+            display: block;
+        }
+    }
 }
 
 .logo-image {

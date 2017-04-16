@@ -19,8 +19,9 @@ export class ApiService {
           .subscribe((res:any) => this.storage.nextQuestion(res));
   }
 
-  fakePost(){
-      return this.http.post("api/fake", {}).subscribe(console.log);
+  fakePost(headers: any){
+      let params = headers ? { headers } : {};
+      return this.http.post("api/fake", {}, params).subscribe(console.log);
   }
 }
 

@@ -11,12 +11,16 @@ class Question{
     type: any
     id: any
     text: any
+    action: any
+    actionParams: any
     constructor(data){
       this.points = data.points;
       this.variants = data.variants;
       this.type = data.type;
       this.text = data.text;
       this.id = data.id;
+      this.action = data.action;
+      this.actionParams = data.actionParams;
     }
 }
 
