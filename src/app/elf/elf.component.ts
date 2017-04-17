@@ -43,10 +43,22 @@ export class ElfComponent{
 
   postWithHeaders(headersParams) {
       let headers = new Headers();
-      debugger;
       each(headersParams, (param) => {
           headers.append(param.key, param.value);
       });
       this.api.fakePost(headers)
+  }
+
+  repeatChange(className) {
+      let el = document.getElementsByClassName("icon-gamer")[0];
+      let originIcon = true;
+      setInterval(()=> {
+          if(originIcon) {
+              el.className = el.className.replace("fa-question-circle-o", className);
+          } else {
+              el.className = el.className.replace(className, "fa-question-circle-o");
+          }
+          originIcon = !originIcon;
+      }, 2000);
   }
 }
